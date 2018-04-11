@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{ctex,amsmath}
+\title{Homework 3}
+\author{许仕杰\qquad SA170110184}
+\date{Apr. 30, 2018}
+\begin{document}
+\maketitle
+\noindent
+\textbf{4.2}
+(1)设$f$为时钟周期的倒数，则$T_s=W_s-f,T_p=W_p\cdot f$，由Amdahl定律可知，固定负载的加速比:
+\begin{equation*}
+	S=\frac{w_s+w_p}{w_s+\frac{w_p}{p}+w_o}=\frac{w_s\cdot f+w_p\cdot f}{w_s\cdot f+\frac{w_p\cdot f}{p}+w_o\cdot f}=\frac{T_1}{T_n}=\frac{CN^3}{\frac{CN^3}{n}+\frac{bN^2}{\sqrt{N}}}=\frac{nCN}{CN+b\sqrt{n}}
+\end{equation*}
+效率$E=\frac{S}{n}=\frac{CN}{CN+b\sqrt{n}}$，由$E$可知并行机数量越多，效率越低。原因是通信开销随节点增加而减小的速率不断变慢，与节点数不是线性相关，负载一定，节点越多，效率越低。
+
+(2)由Custafson定律可知，固定时间的加速比:
+\begin{equation*}
+	S=\frac{W_s+p\cdot W_p}{W_s+W_p+W_o}=\frac{W_s\cdot f+p\cdot W_p\cdot f}{w_s\cdot f+w_p\cdot f+w_o\cdot f}=\frac{nCN^3}{CN^3+bN^2/\sqrt{n}}=\frac{nCN}{CN+b\sqrt{n}}
+\end{equation*}
+效率$E=\frac{S}{n}=\frac{CN}{CN+b\sqrt{n}}$，由$E$可知，时间固定，节点越多，效率越高。原因是：虽然节点数与通信开销不是线性正相关，但是随着节点数增加，并行机中的通信开销还是在减少的。
+
+\noindent\textbf{4.11}由Amdahl定律，加速比$S=\frac{p}{1+p(p-1)}=p-1$，串行分量$f=\frac{1}{(p-1)^2}$。
+
+\noindent\textbf{4.14}会。因为并行系统上额外时间开销是不可消除的，以等效率度量标准为例，$S=\frac{T_e}{T_p}=\frac{T_e}{\frac{T_e+T_0}{p}}=\frac{p}{1+\frac{T_0}{w}},E=\frac{S}{p}=\frac{1}{1+\frac{T_0}{w}}$，当$p$增加，$T_0$也增加，要使$E$不变，需增大$w$，因此具有良好可扩放性的并行算法，任务规模也随着问题规模的增加而增加，只不过这增长关系是线性或者亚线性的。
+\end{document}

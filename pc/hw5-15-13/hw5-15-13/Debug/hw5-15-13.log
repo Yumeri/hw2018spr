@@ -1,0 +1,4 @@
+﻿  stdafx.cpp
+  hw5-15-13.cpp
+c:\users\kyo\desktop\hw2018spr\pc\hw5-15-13\hw5-15-13\hw5-15-13.cpp(13): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  hw5-15-13.vcxproj -> C:\Users\Kyo\Desktop\hw2018spr\pc\hw5-15-13\Debug\hw5-15-13.exe
